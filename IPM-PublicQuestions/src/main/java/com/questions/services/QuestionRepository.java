@@ -11,8 +11,14 @@ import org.springframework.stereotype.Repository;
 import com.questions.entities.Question;
 @Repository(value = "questionRepository")
 @Scope("singleton")
-public interface QuestionRepository extends JpaRepository<Question, Integer> {
+public interface QuestionRepository extends JpaRepository<Question, Long> {
 //    void deleteById(Integer id);
 //
 //    boolean existsById(Integer id);
+  boolean existsById(Long id);
+
+
+	void deleteById(Long id);
+
+	Optional<PublicQuestion> findById(Long id);
 }
