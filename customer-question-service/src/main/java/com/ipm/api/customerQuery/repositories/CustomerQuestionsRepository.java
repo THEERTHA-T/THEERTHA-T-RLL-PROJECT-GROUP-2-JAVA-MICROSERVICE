@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface CustomerQuestionsRepository extends JpaRepository<CustomerQuestions, Long> {
 
-    List<CustomerQuestions> findAllByCustomeremail(String customerEmail);
-
+    List<CustomerQuestions> findByCustomeremail(String customeremail);
     // Add custom query methods if needed
 }
