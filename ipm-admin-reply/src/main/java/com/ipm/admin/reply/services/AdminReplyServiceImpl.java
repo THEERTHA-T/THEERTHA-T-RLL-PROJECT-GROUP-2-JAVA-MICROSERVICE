@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ipm.admin.reply.TodysDate;
 import com.ipm.admin.reply.entity.AdminReply;
 import com.ipm.admin.reply.repository.AdminReplyRepository;
 
@@ -21,6 +22,7 @@ public class AdminReplyServiceImpl implements AdminReplyService {
 
     @Override
     public void saveAdminReply(AdminReply adminReply) {
+    	adminReply.setQanswerdate(TodysDate.todayDate());
         adminReplyRepository.save(adminReply);
     }
 
